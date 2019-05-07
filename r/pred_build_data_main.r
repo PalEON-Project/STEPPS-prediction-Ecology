@@ -2,10 +2,18 @@
 # sides = c('', 'E', 'W')
 grids = c(3)
 sides = c('')
+res  = res
+side = side
+side = '' # 'E', 'W', or ''
+# grid = 'MISP' 
+grid         = 'umw'
+grid_version =  2
+grid_specs = paste0(grid, side, '_', as.character(res), 'by')
+gridname = paste0(grid_specs, '_v', grid_version)
+
 
 version="v2.4"
 AR     = TRUE
-cal    = FALSE
 draw   = FALSE
 ndraws = 10
 nknots = 120

@@ -18,29 +18,15 @@ source('r/utils/pred_helper_funs.r')
 us.shp <- readOGR('data/map_data/us_alb.shp', 'us_alb')
 
 cells = NA
-# cells = seq(1,100)
-
-# grid 
-res  = res
-side = side
-side = '' # 'E', 'W', or ''
-# grid = 'MISP' 
-grid         = 'umw'
-grid_version =  2
-grid_specs = paste0(grid, side, '_', as.character(res), 'by')
-gridname = paste0(grid_specs, '_v', grid_version)
-#gridname = 'umwE_3by'
 
 # reconstruction limits and bin-width
-int  = 300
+int  = 100
 tmin = 150
-if (cal) {
-  tmax = 150
-} else if (one_time) {
+if (one_time) {
   tmin = tmin + (slice-1)*int
   tmax = tmin + int
 } else {
-  tmax = tmin + 27*int
+  tmax = tmin + 20*int
 }
 
 # rescale
@@ -257,25 +243,15 @@ yhi = max(centers_veg$y)
 ##########################################################################################################################
 ## chunk: reorganize pollen data
 ##########################################################################################################################
-# set tamarack to 0 at tamarack creek
+# set tamarack to 0 at tamarack creek; see Dawson et al. QSR 2016
 pollen_ts[pollen_ts$id == 2624, 'TAMARACK'] = rep(0, sum(pollen_ts$id == 2624))
 
 saveRDS(pollen_ts, file='data/pollen_ts.RDS')
 
 pollen_ts1 = pollen_ts[which(pollen_ts$state %in% states_pol),]
 
-# ## pollen data!
-# if (bacon){
-#   pollen_ts1 = pollen_ts[which((pollen_ts$age_bacon <= 2500) & (pollen_ts$state %in% states_pol)),]
-# } else {
-#   pollen_ts1 = pollen_ts[which((pollen_ts$age_default <= 2500) & (pollen_ts$state %in% states_pol)),]
-# }
-
 # reproject pollen coords from lat long to Albers
-pollen_ts2 <- pollen_to_albers(pollen_ts1)
-
-# pollen_ts = pollen_ts[which((pollen_ts[,'x'] <= xhi) & (pollen_ts[,'x'] >= xlo) & 
-#                             (pollen_ts[,'y'] <= yhi) & (pollen_ts[,'y'] >= ylo)),]
+pollen_ts2 = pollen_to_albers(pollen_ts1)
 
 pollen_locs = cbind(pollen_ts2$x, pollen_ts2$y)
 
@@ -285,19 +261,11 @@ idx_pollen_int = apply(pollen_locs, 1,
                        function(x) if (any(rdist(x, pollen_int) < 1e-8)) {return(TRUE)} else {return(FALSE)})
 pollen_ts3 = pollen_ts2[idx_pollen_int, ]
 
-# check how does splitting affects weights... 
-pollen_check = pollen_ts2[,1:7]
-pollen_check$int = rep(FALSE, nrow(pollen_check))
-pollen_check$int[which(idx_pollen_int == TRUE)] = TRUE
-pollen_check=pollen_check[!duplicated(pollen_check),]
-
 # plot domain and core locations 
 par(mfrow=c(1,1))
 plot(centers_veg$x*rescale, centers_veg$y*rescale)
 points(pollen_ts3$x*rescale, pollen_ts3$y*rescale, col='blue', pch=19)
 plot(us.shp, add=T, lwd=2)
-
-# points(pollen_ts3$x[which(pollen_ts3$id %in% vids)]*rescale, pollen_ts3$y[which(pollen_ts3$id %in% vids)]*rescale, col='red')
 
 ##########################################################################################################################
 ## chunk: prepare pollen data; aggregate over time intervals
@@ -320,7 +288,7 @@ pollen_ts$stat_id = pol_ids$stat[match(pollen_ts$id, pol_ids$id)]
 
 ages    = unique(sort(meta_pol$age))
 T       = length(ages) 
-if (cal | one_time) {
+if (one_time) {
   lag = 0
 } else {
   lag     = unname(as.matrix(dist(matrix(ages), upper=TRUE)))
@@ -530,7 +498,6 @@ if (kernel == 'gaussian'){ suff = paste0('G_', suff) } else if (kernel == 'pl'){
 # if (KGAMMA) suff = paste0('KGAMMA_', suff)
 # if (KW) suff = paste0('KW_', suff)
 # if (bacon) suff = paste0(suff, '_bacon')
-if (cal) suff = paste0(suff, '_cal')
 if (!draw) suff = paste0(suff, '_mean')
 
 dirName = paste0('runs/', N_knots, 'knots_', tmin, 'to', tmax, 'ybp_', suff)
