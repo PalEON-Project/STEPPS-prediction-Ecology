@@ -32,7 +32,7 @@ centers_comp=centers_veg
 # pred run data
 load(paste0('runs/input.rdata'))
 
-rIts = readRDS(file=paste0('runs/rIts.RDS'))
+rIts = readRDS(file=paste0('runs/rIts_sub.RDS'))
 
 # work with something smaller until production
 rIts = rIts[,,,seq(1, dim(rIts)[4], by=2)]
