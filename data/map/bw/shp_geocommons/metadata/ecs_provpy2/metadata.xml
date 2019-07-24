@@ -1,0 +1,982 @@
+<?xml version="1.0"?>
+
+
+<metadata>
+
+
+  <idinfo>
+
+    <citation>
+      <citeinfo>
+        <origin>Minnesota DNR - Division of Forestry</origin>
+        <pubdate>1999-06-01 00:00:00.0</pubdate>
+        <title>Ecological Provinces of Minnesota</title>
+        <mgmg1cid></mgmg1cid>
+          <pubinfo>
+            <publish>Minnesota DNR - Division of Forestry</publish>
+          </pubinfo>
+        <onlink>http://deli.dnr.state.mn.us/</onlink>
+      </citeinfo>
+    </citation>
+
+    <descript>
+      <abstract>This coverage provides information for the first level of the Ecological Classification System.  The boundaries of the polygons of this coverage were derived from Land Type Association (LTA) delineations that were compiled from a visual/interpretive process using Topography, Wetlands, Surficial Geology, Soils, Landsat Imagery and Climatic conditions.</abstract>
+      <purpose>This dataset can be used for a variety of planning activities and education.</purpose>
+      <supplinf>Statewide-Minnesota</supplinf>
+    </descript>
+
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>1999</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>The ECS Province level polygons were delineated during part of the process of identifying Land Type Associations in 1997-1998 and are a refinement of the original ECS</current>
+    </timeperd>
+
+    <status>
+      <progress>Complete</progress>
+      <update>As Needed</update>
+    </status>
+    
+    <spdom>
+      <bounding>
+        <westbc>-97.5</westbc>
+        <eastbc>-89</eastbc>
+        <northbc>49.5</northbc>
+        <southbc>43</southbc>
+      </bounding>
+    </spdom>
+
+    <keywords>
+      <theme>
+        <themekey>Ecological Classification System (ECS), Province, geoscientificInformation</themekey>
+      </theme>
+      <place>
+        <placekey>Minnesota</placekey>
+      </place>
+    </keywords>
+
+    <accconst>None</accconst>
+    <useconst>Use of the data are contrained only by the DNR GIS Data License Agreement</useconst>
+    
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Tim Loesch</cntper>
+          <cntorg>DNR-MIS</cntorg>
+        </cntperp>
+        <cntpos>GIS Manager</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>500 Lafayette Road, Box 11</address>
+          <city>St. Paul</city>
+          <state>MN</state>
+          <postal>55155-4011</postal>
+        </cntaddr>
+        <cntvoice> 651-259-5475</cntvoice>
+        <cntfax>(651) 297-4946</cntfax>
+        <cntemail>tim.loesch@dnr.state.mn.us</cntemail>
+      </cntinfo>
+    </ptcontac>
+
+    <browse>
+      <browsen>http://jmaps.dnr.state.mn.us/gis/dp_datasample.jsp?mpid=28000013&amp;ptid=2&amp;fcid=1&amp;lname=Ecological Provinces of Minnesota</browsen>
+      <browsed></browsed>
+    </browse>
+
+    <native>Arc/Info 7.1.1</native>
+    
+    <crossref>
+      <citeinfo>
+        <title></title>
+      </citeinfo>
+    </crossref>
+
+  </idinfo>
+
+
+  <dataqual>
+
+    <attracc>
+      <attraccr>Source table ECS_PROVPY2.DBF:  Automated tests were conducted on all data to ensure that no invalid codes exist within the data set
+</attraccr>
+    </attracc>
+
+    <logic>Data are topolocially correct using ARC/INFO 8.0.2.  All polygons are closed and lines intersect where intended.</logic>
+    <complete>All ECS Province level boundaries in the state were re-located based on the definition of the Land Type Association boundaries, the fourth step in the ECS classification process. Significant differences exist between the older version of the ECS data.</complete>
+    
+    <posacc>
+      <horizpa>
+        <horizpar>Source layer ecsltpy2:  Unknown
+</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>Source layer ecsltpy2:  Not Applicable
+</vertaccr>
+      </vertacc>
+    </posacc>
+     
+    <lineage>
+      <srcinfo>
+        <srcscale>Source layer ecsltpy2:  100000
+</srcscale>
+      </srcinfo>
+      <procstep>
+        <procdesc>Attribute Lineage for source table ECS_PROVPY2.DBF:  Once the LTA coverage was complete, each polygon was assigned a code based on standards in the National Hierarchical Framework of Ecological Units.
+</procdesc>
+      </procstep>
+    </lineage>
+
+  </dataqual>
+
+
+  <spdoinfo>
+
+    <indspref></indspref>
+    <direct>vector</direct>
+    <mgmg3obj>polygon</mgmg3obj>
+    <mgmg3til>state</mgmg3til>
+
+  </spdoinfo>
+
+
+  <spref>
+
+    <horizsys>
+      <geograph>
+        <latres></latres>
+        <longres></longres>
+      </geograph>
+      <planar>
+        <mapproj>
+          <mapprojn>Transverse Mercator</mapprojn>
+          <mgmg4par>Not Applicable</mgmg4par>
+          <otherprj>Not Applicable</otherprj>
+        </mapproj>
+        <gridsys>
+          <gridsysn>UTM</gridsysn>
+          <utm>
+            <utmzone>15</utmzone>
+          </utm>
+          <spcs>
+            <spcszone></spcszone>
+          </spcs>
+          <mgmg4coz></mgmg4coz>
+          <mgmg4adj>Not Applicable</mgmg4adj>
+        </gridsys>
+        <planci>
+          <coordrep>
+            <absres></absres>
+            <ordres></ordres>
+          </coordrep>
+          <distbrep>
+            <distres></distres>
+          </distbrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>NAD83</horizdn>
+        <ellips>GRS1980</ellips>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>Not Applicable</altdatum>
+        <altunits>Not Applicable</altunits>
+      </altsys>
+      <depthsys>
+        <depthdn>Not Applicable</depthdn>
+        <depthdu>Not Applicable</depthdu>
+      </depthsys>
+    </vertdef>
+
+  </spref>
+
+
+  <eainfo>
+
+    <overview>
+      <eaover>Data Elements for Attribute Table ECS_PROVPY2.DBF:
+
+PROVNAME:  Name of the geomorphic province that the feature falls within
+
+ECS_PROV:  ECS Province Code
+
+SECNAME:  The ECS Section name
+
+ECS_SEC:  National Hierarchical Framework of Ecological Units identifier
+
+SUBSECNAME:  The ECS Subsection Name
+
+ECS_SUBSEC:  National Hierarchical Framework of Ecological Units identifier
+
+LTANAME:  LTA Description
+
+ECS_LTA:  National Hierarchical Framework of Ecological Units identifier
+
+VERSION:  ECS Version (Year and Version)
+
+</eaover>
+      <eadetcit>
+Value Domain for Data Element PROVNAME:
+  Eastern Broadleaf Forest = 222
+  Laurentian Mixed Forest Province = 212
+  Prairie Parkland Province = 251
+  Tallgrass Aspen Parklands = 223
+
+Value Domain for Data Element ECS_PROV:
+  212 = Laurentian Mixed Forest Province
+  222 = Eastern Broadleaf Forest Province
+  223 = Tallgrass Aspen Parklands
+  223 = Tallgrass Aspen Parklands Province
+  251 = Prairie Parkland Province
+
+Value Domain for Data Element SECNAME:
+  Lake Agassiz, Aspen Parklands = 223N
+  Minnesota and NE Iowa Morainal = 222M
+  N. Minnesota Drift and Lake Plains = 212N
+  N. Minnesota and Ontario Peatlands = 212M
+  North Central Glaciated Plains = 251B
+  Northern Superior Uplands = 212L
+  Paleozoic Plateau = 222L
+  Red River Valley = 251A
+  Southern Superior Uplands = 212J
+  Western Superior Uplands = 212K
+
+Value Domain for Data Element ECS_SEC:
+  212J = Southern Superior Uplands
+  212K = Western Superior Uplands
+  212L = Northern Superior Uplands
+  212M = N. Minnesota and Ontario Peatlands
+  212N = N. Minnesota Drift and Lake Plains
+  222L = Paleozoic Plateau
+  222M = Minnesota and NE Iowa Morainal
+  223N = Lake Agassiz, Aspen Parklands
+  251A = Red River Valley
+  251B = North Central Glaciated Plains
+
+Value Domain for Data Element SUBSECNAME:
+  Agassiz Lowlands = 212Mb
+  Anoka Sand Plain = 222Mc
+  Aspen Parklands = 223Na
+  Big Woods = 222Mb
+  Border Lakes = 212La
+  Chippewa Plains = 212Na
+  Coteau Moraines = 251Bb
+  Glacial Lake Superior Plain = 212Ja
+  Hardwood Hills = 222Ma
+  Inner Coteau = 251Bc
+  Laurentian Uplands = 212Le
+  Littlefork-Vermillion Uplands = 212Ma
+  Mille Lacs Uplands = 212Kb
+  Minnesota River Prairie = 251Ba
+  Nashwauk Uplands = 212Lc
+  North Shore Highlands = 212Lb
+  Oak Savanna = 222Me
+  Pine Moraines and Outwash Plains = 212Nc
+  Red River Prairie = 251Aa
+  Rochester Plateau = 222Lf
+  St. Croix Moraine = 212Jd
+  St. Louis Moraines = 212Nb
+  St. Paul-Baldwin Plains = 222Md
+  Tamarack Lowlands = 212Nd
+  The Blufflands = 222Lc
+  Toimi Uplands = 212Ld
+
+Value Domain for Data Element ECS_SUBSEC:
+  212Ja = Glacial Lake Superior Plain
+  212Jd = St. Croix Moraine
+  212Kb = Mille Lacs Uplands
+  212La = Border Lakes
+  212Lb = North Shore Highlands
+  212Lc = Nashwauk Uplands
+  212Ld = Toimi Uplands
+  212Le = Laurentian Uplands
+  212Le = Laurentian Highlands
+  212Ma = Littlefork-Vermillion Uplands
+  212Ma = Littlefork Vermilion Uplands
+  212Mb = Agassiz Lowlands
+  212Na = Chippewa Plains
+  212Nb = St. Louis Moraines
+  212Nc = Pine Moraines and Outwash Plains
+  212Nd = Tamarack Lowlands
+  222Lc = The Blufflands
+  222Lf = Rochester Plateau
+  222Ma = Hardwood Hills
+  222Mb = Big Woods
+  222Mc = Anoka Sand Plain
+  222Md = St. Paul-Baldwin Plains
+  222Md = St. Paul-Baldwin Plains and Moraines
+  222Me = Oak Savanna
+  222Me = Oak Savannah
+  223Na = Aspen Parklands
+  251Aa = Red River Prairie
+  251Ba = Minnesota River Prairie
+  251Bb = Coteau Moraines
+  251Bc = Inner Coteau
+
+Value Domain for Data Element LTANAME:
+  Afton Bedrock Hills = 222Md02
+  Agram Sand Plain = 222Mc04
+  Aitkin Moraine = 212Nb02
+  Alexandria Moraine = 222Ma14
+  Alida Till Plain = 212Na21
+  Alluvial Plain = 222Lc01
+  Almelund Moraine = 212Kb32
+  Altura Ridgetops = 222Lc10
+  Amboy Moraine = 251Ba22
+  Ann Lake Drumlin Plain = 212Kb09
+  Anoka Lake Plain = 222Mc01
+  Anthony Lake Plain = 251Aa02
+  Artichoke Moraine = 251Ba04
+  Ash Lake Till Plain = 212La17
+  Audubon Moraine = 251Aa18
+  Aurora Till Plain = 212Nd05
+  Automba Drumlin Plain = 212Nb19
+  Barnesville Beach Complex = 251Aa09
+  Bass Lake Moraine = 212Nc32
+  Baudette Lake Plain = 212Mb07
+  Beach Ridges = 223Na01
+  Beaver Creek Till Plain = 251Bc04
+  Becida Till Plain = 212Na22
+  Bellgrade Sand Plain = 251Ba28
+  Beltrami-Pine Island Beach Ridges = 212Mb16
+  Beltrami-Pine Island Peatlands = 212Mb04
+  Bemidji Sand Plain = 212Na07
+  Bena Dunes and Peatlands = 212Na08
+  Berner Lake Plain = 223Na10
+  Big Rice Moraine = 212Lc07
+  Big-Bird Lake Moraine = 212Le11
+  Blackduck Moraine = 212Na18
+  Blackduck Till Plain = 212Na16
+  Blooming Prairie Till Plain = 222Me04
+  Blooming Valley  Lake Plain = 223Na07
+  Blue Mounds = 251Bc03
+  Bowstring Till Plain = 212Na11
+  Brainerd Drumlin Plain = 212Kb11
+  Brimson Sand Plain = 212Lb21
+  Bronson Lake Plain = 223Na08
+  Brooke Park Till Plain = 212Kb25
+  Brooks Lake Plain = 223Na17
+  Brookston Moraine = 212Lb20
+  Brownsville Slopes = 222Lc02
+  Bruno Moraine = 212Kb01
+  Buffalo Ridge = 251Bb04
+  Buhl Till Plain = 212Nb15
+  Bunde Till Plain = 251Ba08
+  Burns Till Plain = 222Mc02
+  Burtrum Moraine = 222Ma05
+  Cabin Lake Till Plain = 212Lb05
+  Caledonia Ridgetops = 222Lc03
+  Campbell Lake Plain = 251Aa13
+  Cannon River Valley = 222Lc07
+  Chester Ridge = 222Lf01
+  Chisago Moraine = 212Kb31
+  Clarissa Drumlin Plain = 222Ma08
+  Clearbrook Till Plain = 222Ma22
+  Clinton Moraine = 251Ba01
+  Clontarf Lake Plain = 251Ba03
+  Cloquet Sand Plain = 212Lb04
+  Cloverdale Sand Plain = 212Kb19
+  Coates Sand Plain = 222Me09
+  Cook Till Plain = 212Ma21
+  Coon Lake Till Plain = 212Nb08
+  Cordova Moraine = 222Mb01
+  Cormorant Sand Plain = 222Ma21
+  Corvuso Moraine = 251Ba29
+  Crow Wing Sand Plain = 212Nc01
+  Darfur Bedrock Hills = 251Ba18
+  Debs Till Plain = 212Na19
+  Deer River Peatlands = 212Na10
+  Detroit Lakes Sand Plain = 222Ma13
+  Dohrman Ridge = 223Na18
+  Douglas Lake-Modified Till Plain = 212Ja01
+  Duesler Lake Plain = 212Ja09
+  Duxbury Moraine = 212Kb02
+  Duxby Lake Plain = 223Na25
+  Eastside Till Plain = 212Kb05
+  Effie Till Plain = 212Ma18
+  Elba Slopes = 222Lc11
+  Elk River Moraine = 222Mc03
+  Elko Moriane = 222Mb06
+  Elm Park Till Plain = 212Kb21
+  Ely-Knife Lake Bedrock Complex = 212La23
+  Ericsburg Till Plain = 212Ma02
+  Erskine Till Plain = 222Ma20
+  Esquagama Sand Plain = 212Nd06
+  Felton Lake Plain = 251Aa04
+  Fergus Falls Till Plain = 251Aa14
+  Finlayson Till Plain = 212Kb15
+  Flensburg Sand Plain = 222Ma02
+  Flom Till Plain = 251Aa12
+  Floodwood Peatlands = 212Nd03
+  Forest Lake Moraine = 222Md04
+  Fourtown Peatlands = 223Na11
+  Frederic Knolls = 212Jd06
+  Gabbro Lake Bedrock Compl = 212La13
+  Gentilly Lake Plain = 223Na15
+  Gibbon Till Plain = 251Ba20
+  Gilchrist Moraine = 251Ba09
+  Goodhue Plain = 222Lf04
+  Goodland Delta = 212Nb09
+  Goodridge Lake Plain = 223Na05
+  Greenview Lake Plain = 251Aa07
+  Greenwood Lake Till Plain = 212Le10
+  Grogan Sand Plain = 251Ba21
+  Guthrie Till Plain = 212Na03
+  Hallock Lake Plain = 251Aa01
+  Hamburg Moraine = 222Mb02
+  HamptonTill Plain = 222Lf05
+  Haney Till Plain = 212Ma13
+  Havanna Moraine = 222Me05
+  Havelock Lake Plain = 251Ba06
+  Hayfield Till Plain = 222Me08
+  Henning Till Plain = 212Nc29
+  Heron Lake Till Plain = 251Bb06
+  Highland Moriane = 212Lb03
+  Hill City Till Plain = 212Nb12
+  Holdingford Till Plain = 222Ma01
+  Honeymoon Mountain Till Plain = 212Lb08
+  Hopkins Moraine = 222Mb04
+  Horton Till Plain = 251Ba10
+  Indus Lake Plain = 212Mb11
+  Iosco Moraine = 222Me06
+  Isabella Moraine = 212Le01
+  Itasca Moraine = 212Nc16
+  Itasca Moraine, Steep = 212Nc30
+  Jelle Peatlands = 212Mb26
+  Johnson Lake Bedrock Complex = 212La07
+  Johnson Till Plain = 251Ba15
+  Kandiyohi Moraine = 251Ba23
+  Kathio Moraine = 212Kb04
+  Keister Moraine = 251Ba30
+  Kelly-Sawbill Landing Tilll Plain = 212Le02
+  Kettle River Drumlin Plain = 212Kb12
+  Komensky Moraine = 222Mb07
+  Koochiching Beach Ridges = 212Ma16
+  Koochiching Peatlands = 212Ma01
+  Lac LaCroix Bedrock Complex = 212La08
+  Lake Benton Till Plain = 251Bb03
+  Lake Winnibigoshish = 212Na02
+  Lake of the Woods = 212Mb30
+  Landcaster Lake Plain = 223Na09
+  Le Roy Till Plain = 222Me07
+  Le Sueur  Alluvial Plain = 222Mb05
+  Leech Lake = 212Nc15
+  Lemond Moraine = 222Me01
+  Lengby Till Plain = 222Ma19
+  Lerdal Moriane = 222Me02
+  Lewiston Plain = 222Lf02
+  Litomysl Moraine = 222Me03
+  Little-Big Fork Till Plain = 212Ma03
+  Lofgren Moraine = 212Ma10
+  Long Prairie Sand Plain = 222Ma07
+  Lude Beaches and Peatlands = 212Mb24
+  Luverne Alluvial Plain = 251Bc05
+  Luxemburg Sand Plain = 222Ma09
+  Malcolm Lake Plain = 223Na13
+  Malmo Peatlands = 212Kb03
+  Maple Plain Moraine = 222Mb03
+  Maplewood Moraine = 222Md03
+  Marcell Moraine = 212Nb07
+  McIntosh Moraine = 222Ma18
+  Meire Grove Till Plain = 251Ba32
+  Mesabi Range = 212Lc10
+  Milaca Till Plain = 212Kb24
+  Milan Alluvial Plain = 251Ba05
+  Mildred Sand Plain = 212Nc12
+  Mille Lacs Lake = 212Kb16
+  Mille Lacs Moraine = 212Kb28
+  Mississippi River Valley = 222Lc08
+  Mississippi Sand Plain = 222Mc05
+  Money Creek Hills = 222Lc09
+  Moose-Willow Peatlands = 212Nd01
+  Mora Sand Plain = 212Kb23
+  Morris Moraine = 251Ba14
+  Mosquito Creek Drumlin Plain = 212Nc06
+  Mud Lake Plain = 223Na06
+  Myrtle Lake Peatlands = 212Ma04
+  Myrtle Lake Till Plain = 212La16
+  Nary Till Plain = 212Na04
+  Nashwauk Moraine = 212Lc20
+  Naytahwaush Moraine = 212Nc34
+  Nemadji Lake Plain = 212Ja10
+  Net Lake Till Plain = 212Ma15
+  New Folden Lake Plain = 223Na02
+  Nickerson Moraine = 212Kb14
+  Nimrod Drumlin Plain = 212Nc10
+  Nokay Sand Plain = 212Kb10
+  North Shore Till Plain = 212Lb02
+  Northern Lights Lake Till Plain = 212La35
+  Outing Moraine = 212Nc14
+  Palisade Lake Plain = 212Nd08
+  Park Rapids Sand Plain = 212Nc11
+  Pemberton Moraine = 251Ba31
+  Pengilly Till Plain = 212Lc21
+  Perham Sand Plain = 222Ma12
+  Phantom Lake Peatland = 212Le09
+  Pierz Drumlin Plain = 212Kb22
+  Pig's Eye Alluvial Plain = 222Md05
+  Pike-Sandy River Sand Plain = 212Lc05
+  Pillager Sand Plain = 212Nc04
+  Pine Island Peatlands = 212Mb01
+  Pine Lake Till Plain = 212Kb08
+  Pine River Drumlin Plain = 212Nc03
+  Pokegama Moraine = 212Nb05
+  Polk Basalt Moraines = 212Jd05
+  Ponemah Moriane = 212Mb20
+  Poplar Lake Bedrock Complex = 212La22
+  Porter Lake Plain = 251Ba11
+  Prairie River Lake Plain = 212Nb06
+  Randall Sand Plain = 222Ma06
+  Rapid River Till Plain = 212Mb08
+  Rauch Till Plain = 212Ma19
+  Red Lake Peatlands = 212Mb05
+  Red Lakes = 212Mb50
+  Red River Alluvial Plain = 251Aa05
+  Redby Lake Plain = 212Mb19
+  Renville Till Plain = 251Ba07
+  Rice Lake Moraine = 212Nb13
+  Riverton Moraine = 212Kb27
+  Root River Valley = 222Lc04
+  Roscoe  Moraine = 222Ma17
+  Rose Sand Plain = 222Ma10
+  Roseau Lake Plain = 223Na14
+  Roseau River Lake Plain = 223Na16
+  Rosey Lake Plain = 212Na09
+  Ross Peatlands = 223Na12
+  Round Lake Sand Plain = 212Nc33
+  Rove Slate Bedrock Complex = 212La14
+  Rush City Moraine = 212Kb26
+  Saganaga Lake Bedrock Complex = 212La21
+  Sand Hill Lake Plain = 251Aa06
+  Sandy Lake Moraine = 212Nb10
+  Sawtooth Mountain Bedrock Complex = 212Lb11
+  Scandia Valley Sand Plain = 212Nc05
+  Seven Beavers Peatland = 212Le08
+  Shell Lake Moraine = 212Nc28
+  Slayton Moraine = 251Bb02
+  Smith Road Till Plain = 212Ma14
+  Solana Till Plain = 212Kb07
+  South Rapids Lake Plain = 212Nd02
+  Split Rock Till Plain = 212Lb01
+  Spring Brook Till Plain = 212Nc13
+  St. Croix Moraine = 212Nc02
+  St. Croix Terraces = 212Kb18
+  St. Rosa Till Plain = 222Ma03
+  Stanchfield Lake Plain = 212Kb20
+  Stewartville Plain = 222Lf03
+  Stillwater Alluvial Plain = 222Md06
+  Strandquist Lake Plain = 223Na03
+  Sturgeon River Till Plain = 212Mb17
+  Sugar Hills Moraine = 212Nb03
+  Swamp River Till Plain = 212La11
+  Swan Creek Sand Plain = 212Nc08
+  Temperance River Till Plain = 212Le04
+  Tettegouche Till Plain = 212Lb10
+  Thief Lake Peatlands = 223Na19
+  Thief River Falls Lake Plain = 223Na04
+  Three Rivers Peatlands = 212Kb06
+  Timber Freer Till Plain = 212Le03
+  Toimi Drumlin Plain = 212Ld01
+  Tracey Till Plain = 251Bb01
+  Trosky Till Plain = 251Bc02
+  Trout Lake Bedrock Complex = 212La15
+  Two Inlets Moraine = 212Nc31
+  Two Island Lake Moraine = 212La36
+  Underwood Moraine = 222Ma15
+  Urbank Moraine = 222Ma11
+  Vawler Moraine = 222Ma04
+  Vegetable Lakes Till Plain = 212La37
+  Vermilion Bedrock Complex = 212La34
+  Verndale Sand Plain = 212Nc07
+  Vernon Center Moraine = 251Ba27
+  Voyageurs Bedrock Complex = 212La09
+  Wadena Drumlin Plain = 212Nc09
+  Warba Lake Plain = 212Nd04
+  Warren Lake Plain = 251Aa03
+  Warroad Till Plain = 212Mb25
+  Wescott Moraine = 222Md01
+  Whalsten Till Plain = 212Lc06
+  White Earth Moraine = 222Ma16
+  White Iron Lake Bedrock Complex = 212La24
+  Whitewater River Valley = 222Lc05
+  Williams-Skime Lake Plain = 212Mb09
+  Willow River Sand Plain = 212Kb13
+  Windom Moraine = 251Bb05
+  Woodstock Till Plain = 251Bc01
+  Wright Till Plain = 212Nb11
+  Zumbro River Valley = 222Lc06
+
+Value Domain for Data Element ECS_LTA:
+  212Ja01 = Douglas Lake-Modified Till Plain
+  212Ja09 = Duesler Lake Plain
+  212Ja10 = Nemadji Lake Plain
+  212Jd05 = Polk Basalt Moraines
+  212Jd06 = Frederic Knolls
+  212Kb01 = Bruno Moraine
+  212Kb02 = Duxbury Moraine
+  212Kb03 = Malmo Peatlands
+  212Kb04 = Kathio Moraine
+  212Kb05 = Eastside Till Plain
+  212Kb06 = Three Rivers Peatlands
+  212Kb07 = Solana Till Plain
+  212Kb08 = Pine Lake Till Plain
+  212Kb09 = Ann Lake Drumlin Plain
+  212Kb10 = Nokay Sand Plain
+  212Kb11 = Brainerd Drumlin Plain
+  212Kb12 = Kettle River Drumlin Plain
+  212Kb13 = Willow River Sand Plain
+  212Kb14 = Nickerson Moraine
+  212Kb15 = Finlayson Till Plain
+  212Kb16 = Mille Lacs Lake
+  212Kb18 = St. Croix Terraces
+  212Kb19 = Cloverdale Sand Plain
+  212Kb20 = Stanchfield Lake Plain
+  212Kb21 = Elm Park Till Plain
+  212Kb22 = Pierz Drumlin Plain
+  212Kb23 = Mora Sand Plain
+  212Kb24 = Milaca Till Plain
+  212Kb25 = Brooke Park Till Plain
+  212Kb26 = Rush City Moraine
+  212Kb27 = Riverton Moraine
+  212Kb28 = Mille Lacs Moraine
+  212Kb31 = Chisago Moraine
+  212Kb32 = Almelund Moraine
+  212La07 = Johnson Lake Bedrock Complex
+  212La08 = Lac LaCroix Bedrock Complex
+  212La09 = Voyageurs Bedrock Complex
+  212La11 = Swamp River Till Plain
+  212La13 = Gabbro Lake Bedrock Compl
+  212La14 = Rove Slate Bedrock Complex
+  212La15 = Trout Lake Bedrock Complex
+  212La16 = Myrtle Lake Till Plain
+  212La17 = Ash Lake Till Plain
+  212La21 = Saganaga Lake Bedrock Complex
+  212La22 = Poplar Lake Bedrock Complex
+  212La23 = Ely-Knife Lake Bedrock Complex
+  212La24 = White Iron Lake Bedrock Complex
+  212La34 = Vermilion Bedrock Complex
+  212La35 = Northern Lights Lake Till Plain
+  212La36 = Two Island Lake Moraine
+  212La37 = Vegetable Lakes Till Plain
+  212Lb01 = Split Rock Till Plain
+  212Lb02 = North Shore Till Plain
+  212Lb03 = Highland Moriane
+  212Lb04 = Cloquet Sand Plain
+  212Lb05 = Cabin Lake Till Plain
+  212Lb08 = Honeymoon Mountain Till Plain
+  212Lb10 = Tettegouche Till Plain
+  212Lb11 = Sawtooth Mountain Bedrock Complex
+  212Lb20 = Brookston Moraine
+  212Lb21 = Brimson Sand Plain
+  212Lc05 = Pike-Sandy River Sand Plain
+  212Lc06 = Whalsten Till Plain
+  212Lc07 = Big Rice Moraine
+  212Lc10 = Mesabi Range
+  212Lc20 = Nashwauk Moraine
+  212Lc21 = Pengilly Till Plain
+  212Ld01 = Toimi Drumlin Plain
+  212Le01 = Isabella Moraine
+  212Le02 = Kelly-Sawbill Landing Tilll Plain
+  212Le03 = Timber Freer Till Plain
+  212Le04 = Temperance River Till Plain
+  212Le08 = Seven Beavers Peatland
+  212Le09 = Phantom Lake Peatland
+  212Le10 = Greenwood Lake Till Plain
+  212Le11 = Big-Bird Lake Moraine
+  212Ma01 = Koochiching Peatlands
+  212Ma02 = Ericsburg Till Plain
+  212Ma03 = Little-Big Fork Till Plain
+  212Ma04 = Myrtle Lake Peatlands
+  212Ma10 = Lofgren Moraine
+  212Ma13 = Haney Till Plain
+  212Ma14 = Smith Road Till Plain
+  212Ma15 = Net Lake Till Plain
+  212Ma16 = Koochiching Beach Ridges
+  212Ma18 = Effie Till Plain
+  212Ma19 = Rauch Till Plain
+  212Ma21 = Cook Till Plain
+  212Mb01 = Pine Island Peatlands
+  212Mb04 = Beltrami-Pine Island Peatlands
+  212Mb05 = Red Lake Peatlands
+  212Mb07 = Baudette Lake Plain
+  212Mb08 = Rapid River Till Plain
+  212Mb09 = Williams-Skime Lake Plain
+  212Mb11 = Indus Lake Plain
+  212Mb16 = Beltrami-Pine Island Beach Ridges
+  212Mb17 = Sturgeon River Till Plain
+  212Mb19 = Redby Lake Plain
+  212Mb20 = Ponemah Moriane
+  212Mb24 = Lude Beaches and Peatlands
+  212Mb25 = Warroad Till Plain
+  212Mb26 = Jelle Peatlands
+  212Mb30 = Lake of the Woods
+  212Mb50 = Red Lakes
+  212Na02 = Lake Winnibigoshish
+  212Na03 = Guthrie Till Plain
+  212Na04 = Nary Till Plain
+  212Na07 = Bemidji Sand Plain
+  212Na08 = Bena Dunes and Peatlands
+  212Na09 = Rosey Lake Plain
+  212Na10 = Deer River Peatlands
+  212Na11 = Bowstring Till Plain
+  212Na16 = Blackduck Till Plain
+  212Na18 = Blackduck Moraine
+  212Na19 = Debs Till Plain
+  212Na21 = Alida Till Plain
+  212Na22 = Becida Till Plain
+  212Nb02 = Aitkin Moraine
+  212Nb03 = Sugar Hills Moraine
+  212Nb05 = Pokegama Moraine
+  212Nb06 = Prairie River Lake Plain
+  212Nb07 = Marcell Moraine
+  212Nb08 = Coon Lake Till Plain
+  212Nb09 = Goodland Delta
+  212Nb10 = Sandy Lake Moraine
+  212Nb11 = Wright Till Plain
+  212Nb12 = Hill City Till Plain
+  212Nb13 = Rice Lake Moraine
+  212Nb15 = Buhl Till Plain
+  212Nb19 = Automba Drumlin Plain
+  212Nc01 = Crow Wing Sand Plain
+  212Nc02 = St. Croix Moraine
+  212Nc03 = Pine River Drumlin Plain
+  212Nc04 = Pillager Sand Plain
+  212Nc05 = Scandia Valley Sand Plain
+  212Nc06 = Mosquito Creek Drumlin Plain
+  212Nc07 = Verndale Sand Plain
+  212Nc08 = Swan Creek Sand Plain
+  212Nc09 = Wadena Drumlin Plain
+  212Nc10 = Nimrod Drumlin Plain
+  212Nc11 = Park Rapids Sand Plain
+  212Nc12 = Mildred Sand Plain
+  212Nc13 = Spring Brook Till Plain
+  212Nc14 = Outing Moraine
+  212Nc15 = Leech Lake
+  212Nc16 = Itasca Moraine
+  212Nc28 = Shell Lake Moraine
+  212Nc29 = Henning Till Plain
+  212Nc30 = Itasca Moraine, Steep
+  212Nc31 = Two Inlets Moraine
+  212Nc32 = Bass Lake Moraine
+  212Nc33 = Round Lake Sand Plain
+  212Nc34 = Naytahwaush Moraine
+  212Nd01 = Moose-Willow Peatlands
+  212Nd02 = South Rapids Lake Plain
+  212Nd03 = Floodwood Peatlands
+  212Nd04 = Warba Lake Plain
+  212Nd05 = Aurora Till Plain
+  212Nd06 = Esquagama Sand Plain
+  212Nd08 = Palisade Lake Plain
+  222Lc01 = Alluvial Plain
+  222Lc02 = Brownsville Slopes
+  222Lc03 = Caledonia Ridgetops
+  222Lc04 = Root River Valley
+  222Lc05 = Whitewater River Valley
+  222Lc06 = Zumbro River Valley
+  222Lc07 = Cannon River Valley
+  222Lc08 = Mississippi River Valley
+  222Lc09 = Money Creek Hills
+  222Lc10 = Altura Ridgetops
+  222Lc11 = Elba Slopes
+  222Lf01 = Chester Ridge
+  222Lf02 = Lewiston Plain
+  222Lf03 = Stewartville Plain
+  222Lf04 = Goodhue Plain
+  222Lf05 = HamptonTill Plain
+  222Ma01 = Holdingford Till Plain
+  222Ma02 = Flensburg Sand Plain
+  222Ma03 = St. Rosa Till Plain
+  222Ma04 = Vawler Moraine
+  222Ma05 = Burtrum Moraine
+  222Ma06 = Randall Sand Plain
+  222Ma07 = Long Prairie Sand Plain
+  222Ma08 = Clarissa Drumlin Plain
+  222Ma09 = Luxemburg Sand Plain
+  222Ma10 = Rose Sand Plain
+  222Ma11 = Urbank Moraine
+  222Ma12 = Perham Sand Plain
+  222Ma13 = Detroit Lakes Sand Plain
+  222Ma14 = Alexandria Moraine
+  222Ma15 = Underwood Moraine
+  222Ma16 = White Earth Moraine
+  222Ma17 = Roscoe  Moraine
+  222Ma18 = McIntosh Moraine
+  222Ma19 = Lengby Till Plain
+  222Ma20 = Erskine Till Plain
+  222Ma21 = Cormorant Sand Plain
+  222Ma22 = Clearbrook Till Plain
+  222Mb01 = Cordova Moraine
+  222Mb02 = Hamburg Moraine
+  222Mb03 = Maple Plain Moraine
+  222Mb04 = Hopkins Moraine
+  222Mb05 = Le Sueur  Alluvial Plain
+  222Mb06 = Elko Moriane
+  222Mb07 = Komensky Moraine
+  222Mc01 = Anoka Lake Plain
+  222Mc02 = Burns Till Plain
+  222Mc03 = Elk River Moraine
+  222Mc04 = Agram Sand Plain
+  222Mc05 = Mississippi Sand Plain
+  222Md01 = Wescott Moraine
+  222Md02 = Afton Bedrock Hills
+  222Md03 = Maplewood Moraine
+  222Md04 = Forest Lake Moraine
+  222Md05 = Pig's Eye Alluvial Plain
+  222Md06 = Stillwater Alluvial Plain
+  222Me01 = Lemond Moraine
+  222Me02 = Lerdal Moriane
+  222Me03 = Litomysl Moraine
+  222Me04 = Blooming Prairie Till Plain
+  222Me05 = Havanna Moraine
+  222Me06 = Iosco Moraine
+  222Me07 = Le Roy Till Plain
+  222Me08 = Hayfield Till Plain
+  222Me09 = Coates Sand Plain
+  223Na01 = Beach Ridges
+  223Na02 = New Folden Lake Plain
+  223Na03 = Strandquist Lake Plain
+  223Na04 = Thief River Falls Lake Plain
+  223Na05 = Goodridge Lake Plain
+  223Na06 = Mud Lake Plain
+  223Na07 = Blooming Valley  Lake Plain
+  223Na08 = Bronson Lake Plain
+  223Na09 = Landcaster Lake Plain
+  223Na10 = Berner Lake Plain
+  223Na11 = Fourtown Peatlands
+  223Na12 = Ross Peatlands
+  223Na13 = Malcolm Lake Plain
+  223Na14 = Roseau Lake Plain
+  223Na15 = Gentilly Lake Plain
+  223Na16 = Roseau River Lake Plain
+  223Na17 = Brooks Lake Plain
+  223Na18 = Dohrman Ridge
+  223Na19 = Thief Lake Peatlands
+  223Na25 = Duxby Lake Plain
+  251Aa01 = Hallock Lake Plain
+  251Aa02 = Anthony Lake Plain
+  251Aa03 = Warren Lake Plain
+  251Aa04 = Felton Lake Plain
+  251Aa05 = Red River Alluvial Plain
+  251Aa06 = Sand Hill Lake Plain
+  251Aa07 = Greenview Lake Plain
+  251Aa09 = Barnesville Beach Complex
+  251Aa12 = Flom Till Plain
+  251Aa13 = Campbell Lake Plain
+  251Aa14 = Fergus Falls Till Plain
+  251Aa18 = Audubon Moraine
+  251Ba01 = Clinton Moraine
+  251Ba03 = Clontarf Lake Plain
+  251Ba04 = Artichoke Moraine
+  251Ba05 = Milan Alluvial Plain
+  251Ba06 = Havelock Lake Plain
+  251Ba07 = Renville Till Plain
+  251Ba08 = Bunde Till Plain
+  251Ba09 = Gilchrist Moraine
+  251Ba10 = Horton Till Plain
+  251Ba11 = Porter Lake Plain
+  251Ba14 = Morris Moraine
+  251Ba15 = Johnson Till Plain
+  251Ba18 = Darfur Bedrock Hills
+  251Ba20 = Gibbon Till Plain
+  251Ba21 = Grogan Sand Plain
+  251Ba22 = Amboy Moraine
+  251Ba23 = Kandiyohi Moraine
+  251Ba27 = Vernon Center Moraine
+  251Ba28 = Bellgrade Sand Plain
+  251Ba29 = Corvuso Moraine
+  251Ba30 = Keister Moraine
+  251Ba31 = Pemberton Moraine
+  251Ba32 = Meire Grove Till Plain
+  251Bb01 = Tracey Till Plain
+  251Bb02 = Slayton Moraine
+  251Bb03 = Lake Benton Till Plain
+  251Bb04 = Buffalo Ridge
+  251Bb05 = Windom Moraine
+  251Bb06 = Heron Lake Till Plain
+  251Bc01 = Woodstock Till Plain
+  251Bc02 = Trosky Till Plain
+  251Bc03 = Blue Mounds
+  251Bc04 = Beaver Creek Till Plain
+  251Bc05 = Luverne Alluvial Plain
+
+Value Domain for Data Element VERSION:
+  2000a = Initial LTA Published Polygons
+</eadetcit>
+    </overview>
+
+  </eainfo>
+
+
+  <distinfo>
+
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>Hal Watson</cntper>
+          <cntorg>DNR-MIS</cntorg>
+        </cntperp>
+        <cntpos>GIS Database Coordinator</cntpos>
+        <cntaddr>
+          <addrtype>Mailing and Physical</addrtype>
+          <address>500 Lafayette Road, Box 11</address>
+          <city>St. Paul</city>
+          <state>MN</state>
+          <postal>55155-4011</postal>
+        </cntaddr>
+        <cntvoice>(651) 259-5508</cntvoice>
+        <cntfax>(651) 297-4946</cntfax>
+        <cntemail>hal.watson@dnr.state.mn.us</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>ecs_provpy2</resdesc>
+    <distliab>The Minnesota Department of Natural Resources makes no representation or warranties, express or implied, with respect to the reuse of data provided herewith, regardless of its format or the means of its transmission. There is no guarantee or representation to the user as to the accuracy, currency, suitability, or reliability of this data for any purpose. The user accepts the data 'as is', and assumes all risks associated with its use. By accepting this data, the user agrees not to transmit this data or provide access to it or any part of it to another party unless the user shall include with the data a copy of this disclaimer. The Minnesota Department of Natural Resources assumes no responsibility for actual or consequential damage incurred as a result of any user's reliance on this data.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Shapefile</formname>
+          <formvern>Not Applicable</formvern>
+          <transize></transize>
+        </digtinfo>
+      </digform>
+      <ordering>See Online Linkage or Distribution Contact</ordering>
+    </stdorder>
+
+  </distinfo>
+
+
+  <metainfo>
+
+    <metd>2006-08-09 09:12:41.0</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Tim Loesch</cntper>
+          <cntorg>DNR-MIS</cntorg>
+        </cntperp>
+        <cntpos>GIS Manager</cntpos>
+        <cntaddr>
+	  <addrtype>Mailing and Physical</addrtype>
+          <address>500 Lafayette Road, Box 11</address>
+          <city>St. Paul</city>
+          <state>MN</state>
+          <postal>55155-4011</postal>
+        </cntaddr>
+        <cntvoice> 651-259-5475</cntvoice>
+        <cntfax>(651) 297-4946</cntfax>
+        <cntemail>tim.loesch@dnr.state.mn.us</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>Minnesota Geographic Metadata Guidelines</metstdn>
+    <metstdv>1.2</metstdv>
+    <metextns>
+      <onlink>http://www.gis.state.mn.us/stds/metadata.htm</onlink>
+    </metextns>
+
+  </metainfo>
+
+</metadata>
+

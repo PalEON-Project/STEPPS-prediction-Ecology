@@ -15,9 +15,7 @@ source('r/utils/pred_helper_funs.r')
 ######################################################################################################################################
 
 # us albers shape file
-us.shp <- readOGR('data/map_data/us_alb.shp', 'us_alb')
-
-cells = NA
+us.shp <- readOGR('data/map/us_alb.shp', 'us_alb')
 
 # reconstruction limits and bin-width
 int  = 100
@@ -32,31 +30,20 @@ if (one_time) {
 # rescale
 rescale = 1e6
 
-# knots
-# nclust = 75
-# clust.ratio = 6# approx clust.ratio knots per cell
-clust.ratio = 7# approx clust.ratio knots per cell
-clust.ratio = 15# approx clust.ratio knots per cell
-clust.ratio = 150# approx clust.ratio knots per cell
-
-
-# suff=''
+# suffix to append to figure names
 suff    = paste(grid_specs, '_', version, sep='') 
-# suff = '3by_v0.3_test'
 
+# specify states; relict from testing
 states_pol = c('minnesota', 'wisconsin', 'michigan:north')
 states_pls = c('minnesota', 'wisconsin', 'michigan:north')
-
 
 # specify the taxa to use
 # must be from the list: taxa_sub = c('oak', 'pine', 'maple', 'birch', 'tamarack', 'beeh', 'elm', 'spruce', 'ash', 'hemlock')
 # always have: 'other.hardwood' and 'other.conifer'
-
 taxa_all = toupper(c('oak', 'pine', 'maple', 'birch', 'tamarack', 'beech', 'elm', 'spruce', 'ash', 'hemlock'))
 taxa_sub = toupper(c('oak', 'pine', 'maple', 'birch', 'tamarack', 'beech', 'elm', 'spruce', 'ash', 'hemlock'))
-# taxa_sub = toupper(c('oak', 'pine', 'maple'))
 
-
+# K is number of taxa
 K = as.integer(length(taxa_sub) + 1)
 W = K-1
 
@@ -65,23 +52,20 @@ W = K-1
 ##########################################################################################################################
 suff_veg = paste0('12taxa_6341cells_', nknots, 'knots')
 
-path_grid = paste('data/grid/', gridname, '.rdata', sep='')
+path_grid = 'data/grid/umw_3by_v2.rdata'
 
-path_pls      = '../stepps-data/data/composition/pls/pls_umw_v0.6.csv'
-# path_pollen   = '../stepps-data/data/bacon_ages/pollen_ts_bacon_meta_v8.csv'
-# path_bacon    = '../stepps-data/data/bacon_ages'
-path_pollen   = '../stepps-baconizing/data/sediment_ages_v1.0_varves.csv'
-# path_pollen   = '../stepps-baconizing/data/sediment_ages_v7.csv'
+path_pls      = 'data/pls_umw_v0.6.csv'
+path_pollen   = 'data/sediment_ages_v1.0_varves.csv'
 
 if (bchron){
-  path_age_samples    = '../stepps-baconizing/data/bchron_ages'
+  path_age_samples    = 'data/bchron_ages'
 } else {
-  path_age_samples    = '../stepps-baconizing/data/bacon_ages'
+  path_age_samples    = 'data/bacon_ages'
 }
-path_cal      = paste0('../stepps-calibration/output/', run$suff_fit,'.csv')
-path_veg_data = paste0('../stepps-veg/r/dump/veg_data_', suff_veg, '_v0.4.rdata')
-path_veg_pars = paste0('../stepps-veg/figures/', suff_veg, '_nb_v0.5/veg_pars_', nknots, 'knots.rdata')
-path_ages = paste0('../stepps-baconizing/data')
+path_cal      = paste0('data/', run$suff_fit,'.csv')
+path_veg_data = paste0('data/veg_data_', suff_veg, '_v0.4.rdata')
+path_veg_pars = paste0('data/', suff_veg, '_nb_v0.5/veg_pars_', nknots, 'knots.rdata')
+
 ##########################################################################################################################
 ## read in tables and data
 ##########################################################################################################################
@@ -90,13 +74,13 @@ path_ages = paste0('../stepps-baconizing/data')
 tree_type = read.table('data/assign_HW_CON.csv', sep=',', row.names=1, header=TRUE)
 convert   = read.table('data/dict-comp2stepps.csv', sep=',', row.names=1, header=TRUE)
 
+# pls veg data
 pls.raw = data.frame(read.table(file=path_pls, sep=",", row.names=1, header=TRUE))
 
 # read in grid
 load(file=path_grid)
 
-# pollen_ts = read.table(paste('data/pollen_ts_', mydate, '.csv', sep=''), header=TRUE, stringsAsFactors=FALSE)
-# pollen_ts = read.table(paste('../stepps-data/data/pollen_ts_bacon_v1.csv', sep=','), header=TRUE, sep=',', stringsAsFactors=FALSE)
+# pollen data
 pollen_ts = read.table(path_pollen, header=TRUE, sep=',', stringsAsFactors=FALSE)
 pol_ids = data.frame(id=unique(pollen_ts$id), stat_id=seq(1, length(unique(pollen_ts$id))))
 
@@ -121,26 +105,12 @@ if (bchron){
   pollen_ts = pollen_ts[!is.na(pollen_ts$age_bacon),]
 }
 
-# age_ps = read.table(file=paste0(path_ages, '/pol_age_ps_v7.csv'), sep=',', header=TRUE)
-# # foo = remove_post_settlement(pollen_ts, age_ps)
-# 
-# # only removes samples that were clearly identified as post-settlement
-# # if no ambrosia rise, includes all samples
-# pollen_ts = remove_post_settlement(pollen_ts, age_ps)
-
-
-
-# if (any(pollen_ts$age_bacon < 0)) {
-#   tmin = 0
-#   tmax = tmin + 2000
-# }
-
 # max_ages
 if (constrain){
   if (bchron){
-    max_ages = read.table(file=paste0(path_ages, '/pol_ages_bchron_6.csv'), sep=',', header=TRUE)
+    max_ages = read.table(file='data/pol_ages_bchron_6.csv', sep=',', header=TRUE)
   } else {
-    max_ages = read.table(file=paste0(path_ages, '/pol_ages_v6.csv'), sep=',', header=TRUE)
+    max_ages = read.table(file='data/pol_ages_v6.csv', sep=',', header=TRUE)
   }
   drop_samples = constrain_pollen(pollen_ts, max_ages, nbeyond=nbeyond)
   
@@ -151,11 +121,7 @@ if (constrain){
   pollen_ts = pollen_ts[!drop_samples,]
 }
 
-# read in calibration output
-# load('calibration/r/dump/cal_data_12taxa_mid_comp_all.rdata')
-# cal_fit = read_stan_csv('data/calibration_output/12taxa_mid_comp_long.csv')
 
-# cal_fit = rstan::read_stan_csv(paste0('data/calibration_output/', run$suff_fit,'.csv'))
 cal_fit = rstan::read_stan_csv(path_cal)
 
 # read in veg data and output
@@ -192,10 +158,6 @@ meta   = pls.raw[,1:(taxa.start.col-1)]
 meta        = split_mi(meta)
 counts      = counts[which(meta$state2 %in% states_pls),]
 meta        = meta[which(meta$state2 %in% states_pls),]
-# if (length(cells) > 1){
-#   counts   = counts[cells,]
-#   meta = meta[cells,]
-# }
 
 centers_pls = data.frame(x=meta$x, y=meta$y)/rescale # megameters!
 plot(centers_pls[,1]*rescale, centers_pls[,2]*rescale, asp=1, axes=F,  col='antiquewhite4', xlab='',ylab='', pch=19, cex=0.2)
@@ -223,9 +185,6 @@ N_pls = nrow(y_veg)
 # FIXME: ADD STATE TO GRID
 # coarse_domain  = coarse_domain[coarse_domain$state %in% states_pls,]
 coarse_centers = domain[,1:2]
-if (length(cells) > 1){
-  coarse_centers = coarse_centers[cells,]
-}
 
 plot(coarse_centers[,1]*rescale, coarse_centers[,2]*rescale, col='blue')
 plot(us.shp, add=TRUE)
@@ -331,11 +290,6 @@ idx_cores_all <- build_idx_cores(cbind(pollen_check$x, pollen_check$y), centers_
 ## chunk 3: build distance matrices
 ##########################################################################################################################
 
-# plot(domain[,1], domain[,2], asp=1)
-plot(centers_veg[,1], centers_veg[,2], asp=1)
-points(knot_coords[,1], knot_coords[,2], col='blue', pch=19)
-# points(knot_coords2[,1], knot_coords2[,2], col='green', pch=19)
-
 d = rdist(centers_veg, centers_veg)
 diag(d) <- 0
 
@@ -348,10 +302,10 @@ d_inter[which(d_inter<1e-8)]=0
 d_pol = rdist(centers_pol, centers_veg)
 d_pol[which(d_pol<1e-8)]=0
 
-N_knots     = nrow(knot_coords)
+N_knots = nrow(knot_coords)
 
 ##########################################################################################################################
-## chunk: qr decompose X
+## pull in calibration parameters
 ##########################################################################################################################
 KW     = FALSE
 KGAMMA = FALSE
@@ -372,35 +326,22 @@ phi = unname(cal_post[which(par_names == 'phi')][1:K])
 
 one_gamma = run$one_gamma
 if (one_gamma){
-#   gamma = rep(mean(cal_post[,1,which(par_names == 'gamma')]), K)
   gamma = unname(cal_post[which(par_names == 'gamma')])
 } else {
   KGAMMA = TRUE
   gamma  = unname(cal_post[which(par_names == 'gamma')][1:K])
 }
 
-if (kernel=='gaussian'){
-  one_psi = run$one_psi
-  if (one_psi){
-#     psi   = rep(mean(cal_post[,1,which(par_names == 'psi')]), K)
-    psi   = unname(cal_post[which(par_names == 'psi')])
-  } else {
-    KW = TRUE
-    psi   = unname(cal_post[which(par_names == 'psi')][1:K])
-  }
-} else if (kernel=='pl'){
+if (kernel=='pl'){
   one_a = run$one_a
   if (one_a){
-#     a = rep(mean(cal_post[,1,which(par_names == 'a')]), K)
     a = unname(cal_post[which(par_names == 'a')])
   } else {
     KW = TRUE
     a = unname(cal_post[which(par_names == 'a')][1:K])
   }
-  
   one_b = run$one_b
   if (one_b){
-#     b = rep(mean(cal_post[,1,which(par_names == 'b')]), K)
     b = unname(cal_post[which(par_names == 'b')])
   } else {
     KW = TRUE
@@ -409,20 +350,11 @@ if (kernel=='gaussian'){
 }
 
 w <- build_weight_matrix(cal_post, d_pol, idx_cores, N, N_cores, run)
-# head(apply(w, 1, rowSums))
+
 #####################################################################################
 # calculate potential d
 # used to determine C normalizing constant in the non-local contribution term
 #####################################################################################
-
-# x_pot = seq(-528000, 528000, by=8000)
-# y_pot = seq(-416000, 416000, by=8000)
-# coord_pot = expand.grid(x_pot, y_pot)
-# 
-# d_pot = t(rdist(matrix(c(0,0), ncol=2), as.matrix(coord_pot, ncol=2))/dist.scale)
-# d_pot = unname(as.matrix(count(d_pot)))
-# 
-# N_pot = nrow(d_pot)
 
 coord_pot = seq(-700000, 700000, by=8000)
 coord_pot = expand.grid(coord_pot, coord_pot)
@@ -434,20 +366,11 @@ N_pot     = nrow(d_pot)
 sum_w_pot = build_sumw_pot(cal_post, K, N_pot, d_pot, run)
 
 #####################################################################################
-# recompute gamma
+# recompute gamma; needed to account for change in resolution from base res
 #####################################################################################
+
 w_coarse  = build_sumw_pot(cal_post, K, length(d_hood), cbind(t(d_hood), rep(1, length(d_hood))), run)
-
 gamma_new = recompute_gamma(w_coarse, sum_w_pot, gamma)
-
-# #####################################################################################
-# # domain splitting check
-# #####################################################################################
-# w_all <- build_weight_matrix(cal_post, d, idx_cores_all, N, length(idx_cores_all), run)
-# 
-# foo=apply(w_all, 1, rowSums)
-# 
-# pollen_check$sum_w = foo
 
 #####################################################################################
 # veg run pars
@@ -495,9 +418,6 @@ rho = unname(rho)[1:K]
 ## save the data; rdata more efficient, use for processing
 ##########################################################################################################################
 if (kernel == 'gaussian'){ suff = paste0('G_', suff) } else if (kernel == 'pl'){suff = paste0('PL_', suff)}
-# if (KGAMMA) suff = paste0('KGAMMA_', suff)
-# if (KW) suff = paste0('KW_', suff)
-# if (bacon) suff = paste0(suff, '_bacon')
 if (!draw) suff = paste0(suff, '_mean')
 
 dirName = paste0('runs/', N_knots, 'knots_', tmin, 'to', tmax, 'ybp_', suff)
@@ -523,8 +443,6 @@ if (one_time){
   }
 }
 
-# paste0('runs/', K, 'taxa_', N, 'cells_', N_knots, 'knots_', tmin, 'to', tmax, 'ypb_', suff, '.rdata')
-
 fname = file.path(dirName, subDir, 'input')
 
 # note that w is column-major 
@@ -540,7 +458,6 @@ save(K, N, T, N_cores, N_knots, res,
      knot_coords,
      centers_pls, centers_veg, centers_pol, taxa, ages, y_veg, N_pls,
      file=paste0(fname, '.rdata'))
-     # file=paste('r/dump/', K, 'taxa_', N, 'cells_', N_knots, 'knots_', tmin, 'to', tmax, 'ypb_', suff, '.rdata',sep=""))
 
 # convert to row-major
 if (KW){
@@ -556,12 +473,8 @@ dump(c('K', 'N', 'T', 'N_cores', 'N_knots', 'res',
        'idx_cores', 
        'd_knots', 'd_inter', 'w', #'d_pol', #'d', 
        'lag',
-       #        'P', 'N_p', 'sum_w_pot'),
-       'sum_w_pot'),#, 'pollen_check'),
-     #        'knot_coords',
-     #        'centers_pls', 'centers_veg', 'centers_polU', 'taxa', 'ages', 'y_veg', 'N_pls'), 
+       'sum_w_pot'),
      file=paste0(fname, '.dump'))
-    # file=paste('r/dump/', K, 'taxa_', N, 'cells_', N_knots, 'knots_', tmin, 'to', tmax, 'ypb_', suff, '.dump',sep=""))
 
 ##########################################################################################################################
 ## write meta file with paths
